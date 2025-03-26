@@ -24,6 +24,7 @@ exports.checkUser = async (req, res, next) => {
     if (!findLicense) {
       return next(new ErrorResponse("License not found", 404));
     }
+    console.log(findLicense);
 
     // check ip , nếu ip khác với ip đã add thì không cho vào
     const requestIp = req.clientIp;
