@@ -3,6 +3,7 @@ const ErrorResponse = require("../utils/ErrorResponse");
 exports.checkUser = async (req, res, next) => {
   const { license } = req.body;
 
+  console.log(license);
   try {
     const pattern = /^[a-zA-Z0-9]{30}$/;
     if (!pattern.test(license)) {
