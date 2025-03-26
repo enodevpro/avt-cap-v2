@@ -43,11 +43,6 @@ app.use("/api/v1/captcha/", captchaRoutes); // no-need verify
 app.use("/api/v1/login", authRoutes); //no-need verify
 app.use("/api/protect", protectRoutes);
 
-app.use("/", (req, res) => {
-  console.log("RESET");
-  res.status(200).json({ url: "hello dev" });
-});
-
 app.use(errorHandler);
 const PORT = process.env.PORT || 3000;
 
