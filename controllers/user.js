@@ -43,7 +43,7 @@ exports.checkUser = async (req, res, next) => {
       );
       return next(
         new ErrorResponse(
-          "Bạn không có quyển truy cập thông tin này từ hệ thống ",
+          "Bạn không có quyển truy cập thông tin này từ hệ thống -block ",
           500
         )
       );
@@ -51,7 +51,7 @@ exports.checkUser = async (req, res, next) => {
     if (findLicense.status === "block") {
       return next(
         new ErrorResponse(
-          "Bạn không có quyển truy cập thông tin này từ hệ thống ",
+          "Bạn không có quyển truy cập thông tin này từ hệ thống - block 2",
           500
         )
       );
