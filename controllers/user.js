@@ -16,6 +16,7 @@ exports.checkUser = async (req, res, next) => {
       },
       {
         ipAddress: req.clientIp,
+        accessIp: req.clientIp,
       },
       {
         new: true,
