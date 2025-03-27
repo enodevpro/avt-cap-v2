@@ -26,8 +26,8 @@ const limiter = rateLimit({
 
 app.use(
   cors({
-    origin: "https://calm-liger-16f301.netlify.app",
-    methods: "GET,POST,PUT,DELETE",
+    origin: "*", // Cho phép tất cả
+    methods: "GET,POST,PUT,DELETE,OPTIONS",
     allowedHeaders: "Content-Type,Authorization",
   })
 );
