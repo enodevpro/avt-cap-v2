@@ -24,7 +24,14 @@ const limiter = rateLimit({
   message: "Too many requests from this IP, please try again after a second",
 });
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://calm-liger-16f301.netlify.app",
+    methods: "GET,POST,PUT,DELETE",
+    allowedHeaders: "Content-Type,Authorization",
+  })
+);
+
 app.use(express.static("files"));
 app.use(helmet());
 app.use(limiter);
