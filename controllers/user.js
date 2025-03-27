@@ -9,6 +9,7 @@ exports.checkUser = async (req, res, next) => {
     if (!pattern.test(license)) {
       return next(new ErrorResponse("Invalid license key", 401));
     }
+    console.log("Your IP" + req.clientIp);
     const findLicense = await License.findOneAndUpdate(
       {
         name: license,
