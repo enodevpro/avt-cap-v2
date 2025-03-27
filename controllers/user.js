@@ -16,7 +16,6 @@ exports.checkUser = async (req, res, next) => {
       },
       {
         ipAddress: req.clientIp,
-        accessIp: req.clientIp,
       },
       {
         new: true,
@@ -30,7 +29,7 @@ exports.checkUser = async (req, res, next) => {
 
     // check ip , nếu ip khác với ip đã add thì không cho vào
     const requestIp = req.clientIp;
-    if (requestIp !== findLicense.accessIp) {
+    if (requestIp !== findLicense.ipAddress) {
       // block luôn key đi nhé
       await License.findOneAndUpdate(
         {
