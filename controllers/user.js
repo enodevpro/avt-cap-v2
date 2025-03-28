@@ -173,7 +173,7 @@ exports.checkIp = async (req, res, next) => {
       (findLicense.ipAddress === ip) == false &&
       findLicense.name !== "admin"
     ) {
-      return res.status(401).send("change-ip");
+      return res.status(200).send("change-ip");
     }
     res.status(200).send("save-ip");
   } catch (error) {
